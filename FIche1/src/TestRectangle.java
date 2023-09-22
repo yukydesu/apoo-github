@@ -1,3 +1,4 @@
+// Exercices 3.2
 public class TestRectangle {
 
     public static void main(String[] args){
