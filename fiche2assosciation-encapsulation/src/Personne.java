@@ -9,6 +9,9 @@ public class Personne {
         dateDeNaissance = nDateDeNaissance;
         domicile = nDomicile;
     }
+    public String getPrenom() {return prenom;}
+
+    public String getNom() {return nom;}
     public int calculerAge() {return 2023 - dateDeNaissance.getAnnee();}
     public int calculerAgeEn(int annee) {return annee - dateDeNaissance.getAnnee();}
     public Date getDateDeNaissance() {return dateDeNaissance;}

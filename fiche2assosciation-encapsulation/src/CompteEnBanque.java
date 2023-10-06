@@ -20,18 +20,25 @@ public class CompteEnBanque {
     public double getSolde() {return solde;}
     public void setDateValideCarteIddr(int nAnnee, int nMois, int nJour) {
         dateValideCarteIdd = new Date(nAnnee, nMois, nJour);}
-    public void retrait(double nRetrait) {
-        if((nRetrait >= 0) && (nRetrait < solde))
-            solde = solde - nRetrait;
-        else{System.out.println("Retrait trop élevé");}}
-    public void depot(double nDepot) {
-        if(nDepot >= 0)
-            solde = solde + nDepot;
-        else{System.out.println("Dépot négatif");}}
-    public void virement(double nVirement, Personne nCompteDestinataire) {
-        if((nVirement >= 0 ) && (nVirement <= solde)) {
-            CompteEnBanque
-
-        }
-    }
-    }
+    // TRAITER D'ABORD LES CAS D'ERREUR !!!!!
+    public boolean retirer(double nRetrait) {
+        if((nRetrait <= 0) || (nRetrait > solde))
+            return false;
+        solde -= nRetrait;
+        return true;}
+    // TRAITER D'ABORD LES CAS D'ERREUR !!!!!
+    public boolean deposer(double nDepot) {
+        if(nDepot <= 0)
+            return false;
+        solde += nDepot;
+        return true;}
+    // METTRE VERBE DANS UNE OPERATION
+    public boolean faireVirement(double nVirement, CompteEnBanque nDestinataire) {
+        if((nVirement <= 0) || (nVirement> solde))
+            return false;
+        solde -= nVirement;
+        nDestinataire.solde += nVirement;
+        return true;}
+    public String toString() {return titulaire.getNom() + " " + titulaire.getPrenom() +
+            " " + numeroCompte + " " + getDateOuverture + " SOLDE : " + solde + "€";}
+}
