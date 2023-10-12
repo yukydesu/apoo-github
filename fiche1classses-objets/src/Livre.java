@@ -10,7 +10,7 @@ class Livre {
     int page;
 
     // Constructeur :
-    Livre(char nIsbn, char nTitre, char nAuteur, double nPrix, int nAnnee, int nPage ) {
+    Livre(String nIsbn, String nTitre, String nAuteur, double nPrix, int nAnnee, int nPage ) {
 
         isbn = nIsbn;
         titre = nTitre;
