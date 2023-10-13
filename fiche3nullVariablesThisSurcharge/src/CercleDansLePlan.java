@@ -3,11 +3,18 @@ public class CercleDansLePlan {
 	private double rayon;
 	private Point centre;
 	
-	public CercleDansLePlan(double nRayon, Point nCentre) {
-		rayon = nRayon;
-		centre = nCentre;
+	public CercleDansLePlan(double rayon, Point centre) {
+		this.rayon = rayon;
+		this.centre = centre;
+		// Prrendre ce qu'il y a a droite et le mettre dans a gauche
+	}
+	public CercleDansLePlan(Point centre){
+		this(1, centre);
 	}
 
+	public CercleDansLePlan() {
+		this(1,new Point(0,0));
+	}
 	public double getRayon() {
 		return rayon;
 	}

@@ -3,9 +3,9 @@ public class Point {
 	private double x;
 	private double y;
 	
-	public Point(double nX, double nY) {
-		x = nX;
-		y = nY;
+	public Point(double x, double y) {
+		x = this.x;
+		y = this.y;
 	}
 
 	public double getX() {
